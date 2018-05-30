@@ -1,0 +1,42 @@
+<header>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="<%= root_path %>">
+        <h1 class="title is-1">PetShop</h1>
+      </a>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="<%= produtos_path %>">Produtos</a>
+        <a class="navbar-item" href="<%= marcas_path %>">Marcas</a>
+        <a class="navbar-item" href="<%= tags_path %>">Tags</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+             
+<% if admin_signed_in? %>
+  Logged in as <strong><%= current_admin.email %></strong>.
+  <%= link_to 'Edit profile', edit_admin_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_admin_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_admin_session_path, :class => 'navbar-link'  %>
+<% end %>
+             
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
