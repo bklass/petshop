@@ -1,0 +1,12 @@
+class CreateMarcas < ActiveRecord::Migration[5.2]
+  def change
+    create_table :marcas do |t|
+      t.integer :codigo
+      t.string :nome
+      t.string :empresa
+      t.string :telefone
+
+      t.timestamps
+    end
+  end
+end
